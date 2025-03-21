@@ -1,0 +1,25 @@
+.header {
+    background-color: rgb(196, 195, 195);
+    color: rgb(114, 8, 107);
+    box-shadow: 0 5px 5px 1px rgb(50, 50, 50);
+    border: 3px solid black;
+    padding: 2% 0;
+    width: 99%;
+    margin-top: .5%;
+    margin-left: .5%;
+}
+
+.nav {
+    font-size: large;
+    text-align: center;
+}
+
+.navItem {
+    margin: auto 4rem;
+    padding-top: 5%;
+}
+
+.navItem:hover {
+    text-decoration: underline;
+    color: rgb(226, 8, 250);
+}
