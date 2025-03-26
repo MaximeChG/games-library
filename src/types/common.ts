@@ -1,5 +1,4 @@
-export type Game = {
-        id: Number,
+export type LocalGame = {
         title: String,
         sortTitle: String,
         progress: String,
@@ -11,8 +10,7 @@ export type Game = {
         addedDate: Date    
 };
 
-const blankGame: Game = {
-    id: 0,
+const blankGame: LocalGame = {
     title: "",
     sortTitle: "",
     progress: "notStarted",

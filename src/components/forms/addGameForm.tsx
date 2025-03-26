@@ -1,4 +1,5 @@
 "use client";
+import { LocalGame } from "@/types/common";
 import classes from "./form.module.css";
 
 import GameForm from "./gameForm";
@@ -15,7 +16,7 @@ const AddGameForm = () => {
 
         const formData = e.target;
 
-        const newGame = {
+        const newGame: LocalGame = {
             title: formData.title.value,
             sortTitle: formData.sortTitle.value,
             consoles: formData.consoles.value,

@@ -1,5 +1,5 @@
+import { LocalGame } from "@/types/common";
 import { redirect } from "next/navigation";
-import { Router } from "next/router";
 
 export const fetchGames = async () => {
     const res = await fetch("http://localhost:3000/api/games");
@@ -7,12 +7,18 @@ export const fetchGames = async () => {
     return games; 
 }
 
-export const addGame = async (game: any) => {
-    const options = {
-        method: "PUT",
-        body: game
-    }
+export const addGame = async (game: LocalGame) => {
 
-    const res = await fetch("http://localhost:3000/api/games", options);
-    return redirect("/");
+    /*const reqBody = {
+        game: game
+    };*/
+    await fetch("http://localhost:3000/api/games", {
+        method: "put",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(game)
+    });
+    //return redirect("/");
 }

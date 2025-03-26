@@ -2,7 +2,6 @@ import LegendContainer from "@/components/legend/legend";
 import classes from "./page.module.css";
 import Link from "next/link";
 import RowContainer from "@/components/gameRow/rowContainer";
-import { IGame } from "@/types/games";
 import { fetchGames } from "@/lib/gameActions";
 
 type Props = {

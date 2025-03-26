@@ -1,5 +1,7 @@
 import dbConnect from "@/lib/mongodb";
+import { LocalGame } from "@/types/common";
 import Game from "@/types/games";
+import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
 export async function GET() {    
@@ -15,11 +17,14 @@ export async function GET() {
     }
 }
 
-export async function PUT() {    
+export async function PUT(req: any, res: NextApiResponse) {    
     await dbConnect();
 
+    const data: LocalGame = await req.json();
+
     try {
-        console.log("here");
+        console.log(data);
+
         return NextResponse.json({success: true});
     }
     catch (errorMessage: any) {
