@@ -1,16 +1,40 @@
+'use client'
+
+import { LocalGame } from "@/types/common";
 import classes from "./form.module.css";
 
 import GameForm from "./gameForm";
+import { updateGame } from "@/lib/gameActions";
 
-const EditGameForm = () => {
+type Props = {
+    game: LocalGame
+};
 
-    function editCurrentGame(e: any) {
+const EditGameForm = ({game}: Props) => {
+
+    async function editCurrentGame(e: any) {
         e.preventDefault();
+
+        const formData = e.target;
+
+        const gameInfo: LocalGame = {
+            _id: game._id,
+            title: formData.title.value,
+            sortTitle: formData.sortTitle.value,
+            consoles: formData.consoles.value,
+            image: formData.image.value,
+            releaseYear: formData.releaseYear.value,
+            progress: formData.progress.value,
+            progressDescription: formData.progressDescription.value,
+            playedTimes: game.playedTimes,
+            addedDate: game.addedDate
+        }
+        await updateGame(e);
     }
 
     return <div className={classes.container}>
         <h1 className={classes.h1}>Edit Game</h1>
-        <GameForm onSubmit={editCurrentGame} />
+        <GameForm _game={game} onSubmit={editCurrentGame} />
     </div>
 }
 

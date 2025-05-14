@@ -1,16 +1,18 @@
 export type LocalGame = {
-        title: String,
-        sortTitle: String,
-        progress: String,
-        progressDescription: String,
-        consoles: [String],
-        image: String,
-        playedTimes: Number,
-        releaseYear: Number,
+        _id?: string
+        title: string,
+        sortTitle: string,
+        progress: string,
+        progressDescription: string,
+        consoles: [string],
+        image: string,
+        playedTimes: number,
+        releaseYear: number,
         addedDate: Date    
 };
 
 const blankGame: LocalGame = {
+    _id: "",
     title: "",
     sortTitle: "",
     progress: "notStarted",

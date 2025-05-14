@@ -3,7 +3,7 @@ import styles from "./row.module.css";
 import Link from "next/link";
 
 interface ActionsProps {
-    id: number,
+    id: string,
 }
 
 const RowActions: FunctionComponent<ActionsProps> = ({id}) => {

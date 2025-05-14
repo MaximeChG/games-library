@@ -7,11 +7,10 @@ interface ExpandedProps {
     consoles: (string | undefined)[],
     playedTimes: number | undefined,
     progressDescription: string | null | undefined,
-    reviews: (number | undefined)[] | undefined,
     sortTitle: string | null | undefined, 
     releaseYear: number | null | undefined
 }
-const ExpandedContent: FunctionComponent<ExpandedProps> = ({consoles, playedTimes, progressDescription, reviews, sortTitle, releaseYear }) => {
+const ExpandedContent: FunctionComponent<ExpandedProps> = ({consoles, playedTimes, progressDescription, sortTitle, releaseYear }) => {
 
     if (!playedTimes) {
         playedTimes = 0;
@@ -28,7 +27,6 @@ const ExpandedContent: FunctionComponent<ExpandedProps> = ({consoles, playedTime
             {consoles && <RowItem label="Consoles" item={consoleString}/>}
             {playedTimes > 0 && <RowItem label="Played Times" item={playedTimes.toString()} />}
             {progressDescription && <RowItem label="Progress Description" item={progressDescription}/>}
-            {reviews && <RowItem label="Reviews" item={reviews.toString()}/>}
             {sortTitle && <RowItem label="Sort Name" item={sortTitle} />}
             {releaseYear && <RowItem label="Release Year" item={releaseYear.toString()} />}
         </div>
