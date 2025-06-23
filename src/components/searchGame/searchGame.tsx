@@ -7,7 +7,6 @@ const SearchGameContainer: FunctionComponent = () => {
         <div className={classes.searchGames}>
             <label>Search:</label>
             <input />
-            <Link type="button" className={classes.button} href={"/game"}>Add Game</Link>
         </div>
     )
 }

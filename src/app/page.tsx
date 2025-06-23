@@ -1,33 +1,13 @@
-import LegendContainer from "@/components/legend/legend";
-import classes from "./page.module.css";
-import Link from "next/link";
-import RowContainer from "@/components/gameRow/rowContainer";
-import { fetchGames } from "@/lib/gameActions";
-
-type Props = {
-};
-
-export default async function Home({  }: Props) {
-
-  const games = await fetchGames();
-
-  return (
-    <>
-      <div className={classes.header}>
-        <LegendContainer />
-        <div className={classes.searchGames}>
-            <label>Search:</label>
-            <input />
-            <Link type="button" className={classes.button} href={"/game"}>Add Game</Link>
-        </div>
-      </div>
-      <div className={classes.body}>
-        <ul className={classes.gamesList}>
-          {games.map((game: any) => (
-                  <RowContainer  key={game._id.toString()} game={game} />
-              ))}
-        </ul>
-      </div>
-    </>
-  );
+export default async function Page() {
+    // For now return the AddGameForm
+    return <h1>Home page</h1>
 }
+
+/*
+    For this page I am hoping to add multiple components for general tracking
+    I will to see all games that are "In Progress"
+    A component for games most recent changes to games
+    A component for the X latest reviews (I would like this in a carousel I think)
+    I want a component for the most recently added games
+    A component for all active list. Should be in a carousel as well I think. 
+*/
