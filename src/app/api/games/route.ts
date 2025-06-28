@@ -1,7 +1,7 @@
 import dbConnect from "@/lib/mongodb";
 import { LocalGame } from "@/types/common";
 import Game from "@/types/games";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 
 // File for makin calls to database, 

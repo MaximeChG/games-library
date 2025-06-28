@@ -17,14 +17,13 @@ export default async function Home({  }: Props) {
   // TODO: the app should show an error message if unable to find games
   return (
     <>
-    {/*   Header section should include the legend, and a way to search, add games 
+    {/*   Header section should include the legend, and a way to search
     TODO: Would like to eventually create a filter instead of search function*/}
       <div className={classes.header}>
         <LegendContainer />
         <div className={classes.searchGames}>
             <label>Search:</label>
             <input />
-            <Link type="button" className={classes.button} href={"/game"}>Add Game</Link>
         </div>
       </div>
 
