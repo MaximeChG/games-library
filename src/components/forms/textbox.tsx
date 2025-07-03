@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import classes from "./form.module.css";
 
 interface textboxProps {
@@ -8,10 +8,16 @@ interface textboxProps {
     textValue?: string,
 }
 
-const FormTextbox: FunctionComponent<textboxProps> = ({id, name, label, textValue}) => {
+const FormTextbox: FunctionComponent<textboxProps> = ({id, name, label, textValue = ''}) => {
+    const [newValue, setValue] = useState(textValue);
+    
+    function onChange(e: any) {
+        setValue(e.target.value);
+    }
+        
     return <div className={classes.container}>
         <label htmlFor={id}>{label}:</label>
-        <textarea className={classes.formTextbox} name={name} id={id}/>
+        <textarea className={classes.formTextbox} name={name} id={id} value={newValue} onChange={onChange}/>
     </div>
 }
 

@@ -4,19 +4,18 @@ import { redirect } from "next/navigation";
 export const fetchGames = async () => {
     const res = await fetch("http://localhost:3000/api/games");
     const games = await res.json();
-    console.log(games);
     return games; 
 }
 
 export const fetchGame = async (_id: string) => {
-    const res = await fetch(`http://localhost:3000/api/games?query=${_id}`);
+    const res = await fetch(`http://localhost:3000/api/games/game?query=${_id}`);
     const game = await res.json();
     return game;
 }
 
 export const addGame = async (game: LocalGame) => {
 
-    await fetch("http://localhost:3000/api/games", {
+    await fetch("http://localhost:3000/api/games/game", {
         method: "put",
         headers: {
           Accept: "application/json",
@@ -24,11 +23,12 @@ export const addGame = async (game: LocalGame) => {
         },
         body: JSON.stringify(game)
     });
-    return redirect("/");
+
+    return redirect("/games");
 }
 
 export const updateGame = async (game: LocalGame) => {
-    await fetch("http://localhost:3000/api/games", {
+    await fetch("http://localhost:3000/api/games/game", {
         method: "patch",
         headers: {
           Accept: "application/json",
@@ -36,5 +36,5 @@ export const updateGame = async (game: LocalGame) => {
         },
         body: JSON.stringify(game)
     });
-    return redirect("/");
+    return redirect("/games");
 }

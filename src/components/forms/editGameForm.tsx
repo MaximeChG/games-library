@@ -29,7 +29,7 @@ const EditGameForm = ({game}: Props) => {
             playedTimes: game.playedTimes,
             addedDate: game.addedDate
         }
-        await updateGame(e);
+        await updateGame(gameInfo);
     }
 
     return <div className={classes.container}>

@@ -14,7 +14,7 @@ const RowActions: FunctionComponent<ActionsProps> = ({id}) => {
             <div className={styles.buttonsRow}>
                 <button type="button" className={styles.button}>Details</button>
                 <button type="button" className={styles.button}>Update Progress</button>
-                <Link type="button" className={styles.button} href={`/game/${id}`}>Edit</Link>
+                <Link type="button" className={styles.button} href={`/games/game/${id}`}>Edit</Link>
             </div>
         </>
         

@@ -21,7 +21,6 @@ const RowContainer: FunctionComponent<rowProps> = ({ game }) => {
     const addedDate = new Date(game.addedDate).toLocaleDateString();
     return <li className={`${styles.gameRow} ${styles[game.progress]}`}>
         <div className={styles.baseContainer}>
-            {game.image && <img className={styles.image} src={game.image.toString()} />}
             {game.title && <p>{game.title}</p>}
             {game.addedDate && <p>{addedDate}</p>}
             <p onClick={handleExpand}>Expand</p>
