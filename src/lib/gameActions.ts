@@ -16,9 +16,8 @@ export const fetchGame = async (_id: string) => {
 export const addGame = async (game: LocalGame) => {
 
     await fetch("http://localhost:3000/api/games/game", {
-        method: "put",
+        method: "PUT",
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(game)
@@ -29,9 +28,8 @@ export const addGame = async (game: LocalGame) => {
 
 export const updateGame = async (game: LocalGame) => {
     await fetch("http://localhost:3000/api/games/game", {
-        method: "patch",
+        method: "PATCH",
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(game)
