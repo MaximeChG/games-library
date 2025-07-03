@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import classes from "./form.module.css";
+import classes from "../form.module.css";
 
 interface datePickerProps {
     id: string,

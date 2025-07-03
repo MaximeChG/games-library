@@ -1,14 +1,14 @@
 "use client"
 
 import classes from "./form.module.css";
-import Button from "./button";
-import TextArea from "./textbox";
-import Input from "./input";
-import DropDown from "./dropdown";
+import Button from "./components/button";
+import TextArea from "./components/textbox";
+import Input from "./components/input";
+import DropDown from "./components/dropdown";
 import { GameState } from "@/data/dropDownLists";
 import { FunctionComponent } from "react";
 import { BLANKGAME } from "@/data/mockGames";
-import Number from "./number";
+import Number from "./components/number";
 import { LocalGame } from "@/types/common";
 import { ArrayToString } from "@/hooks/util";
 

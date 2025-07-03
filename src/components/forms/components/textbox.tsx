@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from "react";
-import classes from "./form.module.css";
+import classes from "../form.module.css";
 
 interface textboxProps {
     id: string,

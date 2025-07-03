@@ -1,40 +1,32 @@
-'use client'
-
 import { FunctionComponent, useState } from "react";
 import styles from "./row.module.css";
-import ExpandedContent from "./expandedContent";
-import RowActions from "./rowActions";
 import { LocalGame } from '../../types/common';
+import Link from "next/link";
+import { ArrayToString } from "@/hooks/util";
+import { GameProgress, GameState } from "@/data/dropDownLists";
 
 interface rowProps {
     game: LocalGame
 }
 
 const RowContainer: FunctionComponent<rowProps> = ({ game }) => {
-    const [expanded, setIsExpanded] = useState(false);
-
-    // expand functionality
-    function handleExpand() {
-        setIsExpanded(!expanded);
-    }
 
     const addedDate = new Date(game.addedDate).toLocaleDateString();
+
+    let consoleString: string = "";
+    if (game.consoles){
+        consoleString = ArrayToString(game.consoles);
+    }
+
+    const progress = GameState.entries();
+
     return <li className={`${styles.gameRow} ${styles[game.progress]}`}>
         <div className={styles.baseContainer}>
             {game.title && <p>{game.title}</p>}
+            <p>{consoleString}</p>
             {game.addedDate && <p>{addedDate}</p>}
-            <p onClick={handleExpand}>Expand</p>
-        </div>
-        {expanded &&
-            <ExpandedContent 
-                consoles={game.consoles} 
-                playedTimes={game.playedTimes} 
-                progressDescription={game.progressDescription} 
-                sortTitle={game.sortTitle}
-                releaseYear={game.releaseYear} />
-        }
-        <RowActions id={game._id!}/>
-        
+            <Link type="button" className={styles.button} href={`/games/game/${game._id}`}>Edit</Link>
+        </div>      
     </li>
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { FunctionComponent } from "react";
-import classes from "./form.module.css";
+import classes from "../form.module.css";
 
 interface formButtonProps {
     text: string
