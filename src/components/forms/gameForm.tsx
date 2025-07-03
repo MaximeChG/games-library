@@ -28,7 +28,7 @@ const GameForm: FunctionComponent<GameProps> = ({onSubmit, _game}) => {
             <Input label="Image" name="image" id="image" inputValue={game.image}/>
             <Number label="Release Year" name="releaseYear" id="releaseYear" />
             <DropDown label="Progress" name="progress" id="progress" list={GameState} dropdownValue={game.progress}/>
-            <TextArea label="Progress Description" name="progressDescription" id="progressDescription"/>
+            <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription}/>
         
             <Button type={"submit"} text="Submit"/>
         </form>
