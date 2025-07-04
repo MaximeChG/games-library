@@ -3,7 +3,7 @@ import styles from "./row.module.css";
 import { LocalGame } from '../../types/common';
 import Link from "next/link";
 import { ArrayToString } from "@/hooks/util";
-import { GameProgress, GameState } from "@/data/dropDownLists";
+import { GameState } from "@/data/dropDownLists";
 
 interface rowProps {
     game: LocalGame
