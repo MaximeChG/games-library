@@ -13,7 +13,7 @@ interface dropdownProps {
 const FormDropdown: FunctionComponent<dropdownProps> = ({label, name, id, list, dropdownValue = "Not Started"}) => {
     const [newValue, setValue] = useState(dropdownValue);
 
-    function onChange(e: any) {
+    function onChange(e: React.ChangeEvent<HTMLSelectElement>) {
         setValue(e.target.value);
     }
     

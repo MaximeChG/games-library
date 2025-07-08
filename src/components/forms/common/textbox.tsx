@@ -11,7 +11,7 @@ interface textboxProps {
 const FormTextbox: FunctionComponent<textboxProps> = ({id, name, label, textValue = ''}) => {
     const [newValue, setValue] = useState(textValue);
     
-    function onChange(e: any) {
+    function onChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         setValue(e.target.value);
     }
         

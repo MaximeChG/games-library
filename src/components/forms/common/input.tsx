@@ -13,7 +13,7 @@ interface inputProps {
 const FormInput: FunctionComponent<inputProps> = ({id, name, label, inputValue = ''}) => {
     const [newValue, setValue] = useState(inputValue);
 
-    function onChange(e: any) {
+    function onChange(e: React.ChangeEvent<HTMLInputElement>) {
         setValue(e.target.value);
     }
 

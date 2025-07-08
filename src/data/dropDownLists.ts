@@ -13,7 +13,7 @@ export const GameState: { key: string, value: string }[] = [
 ];
 
 export const GameConsoles: { key: string, value: string }[] = [
-    { key: 'steam', value: "Steam" },
+    { key: 'steam', value: "Steam"},
     { key: 'epicGames', value: "Epic Games" },
     { key: 'pc', value: "PC" },
     { key: 'nes', value: "NES" },
