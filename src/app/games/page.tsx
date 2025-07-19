@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import Row from "@/components/common/row/row";
 import LegendContainer from "@/components/legend/legend";
 import Search from "@/components/search/search";
+import AddGame from "@/components/games/addGame/addGame";
 
 
 // Since this is the base page, I doub props will ever be used but you never know
@@ -24,6 +25,7 @@ export default async function Home({ }: Props) {
       <Row>
         <LegendContainer />
         <Search label="Search: "/>
+        <AddGame />
       </Row>
       <Suspense fallback={<div>Loading...</div>}>
         <List games={games} />

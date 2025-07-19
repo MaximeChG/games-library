@@ -11,7 +11,7 @@ export function ArrayToString(array: string[]) {
             // concatenate the item to the string
             newString += item + ", "
         ));
-        
+
         // Remove the last "," from the string.
         newString = newString.substring(0, newString.length - 2);
     };
@@ -34,21 +34,21 @@ export function GetValueByKey(arr: { key: string, value: string }[], keyToFind: 
 }
 
 // Function to get all keyValue pairs based on an array of keys
-export function GetKeyValueArrayByKey(arr: {key: string, value: string}[], arrayOfKeys: string[]){
+export function GetKeyValueArrayByKey(arr: { key: string, value: string }[], arrayOfKeys: string[]) {
     // Create a new array of key-value pairs
-    const newArray: {key: string, value: string}[] = [];
+    const newArray: { key: string, value: string }[] = [];
 
     arrayOfKeys.map((key) => {
         // get the value based on the key
         const value = GetValueByKey(arr, key);
         // Check that the value returned was not null
-        if (value){
+        if (value) {
             // push to the new array
-            newArray.push({key: key, value: value});
+            newArray.push({ key: key, value: value });
         }
         else {
-           newArray.push({key: 'notFound' + key, value: key});
-           console.log("Value not found for " + key);
+            newArray.push({ key: 'notFound' + key, value: key });
+            console.log("Value not found for " + key);
         }
     })
     // return the newArray, 
@@ -56,7 +56,7 @@ export function GetKeyValueArrayByKey(arr: {key: string, value: string}[], array
 }
 
 // Function to only get all the values based on the key for each keys in an array
-export function GetValueArrayByKey(arr: {key: string, value: string}[], arrayOfKeys: string[]) {
+export function GetValueArrayByKey(arr: { key: string, value: string }[], arrayOfKeys: string[]) {
     // Create new array to store the values
     const newArray: string[] = [];
 
@@ -77,13 +77,16 @@ export function GetValueArrayByKey(arr: {key: string, value: string}[], arrayOfK
     return newArray;
 }
 
-export function GetNotFound(arr: {key: string, value: string}[]){
+export function GetNotFound(arr: { key: string, value: string }[]) {
     const newArray: string[] = [];
 
     arr.map((item) => {
-        if(item.key == 'notFound'){
+        if (item.key == 'notFound') {
             newArray.push(item.value);
         }
     })
     return newArray;
 }
+
+
+// function to edit the consoles string

@@ -1,4 +1,4 @@
-import classes from "./searchGame.module.css";
+import classes from "./search.module.css";
 
 interface Props {
  label: string
