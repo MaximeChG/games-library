@@ -1,4 +1,3 @@
-import { FunctionComponent } from "react";
 import styles from "./legendItem.module.css";
 
 interface itemProps {
@@ -6,8 +5,6 @@ interface itemProps {
     progressClass: string
 }
 
-const LegendItem: FunctionComponent<itemProps> = ({progressText, progressClass}) => {
+export default function LegendItem({ progressText, progressClass }: itemProps) {
     return <li className={styles[progressClass]}>{progressText}</li>
 }
-
-export default LegendItem;

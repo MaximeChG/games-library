@@ -1,9 +1,8 @@
-import { FunctionComponent } from 'react';
-import { GameState } from '../../../data/dropDownLists';
 import LegendItem from './legendItem';
 import classes from "./legend.module.css";
+import { GameState } from '@/data/dropDownLists';
 
-const LegendContainer: FunctionComponent = () => {
+export default function LegendContaine(){
     return <div className={classes.legendContainer}>
         <ul className={classes.legend}>
             {GameState.map((item) => (
@@ -12,5 +11,3 @@ const LegendContainer: FunctionComponent = () => {
         </ul>
     </div>
 }
-
-export default LegendContainer;
