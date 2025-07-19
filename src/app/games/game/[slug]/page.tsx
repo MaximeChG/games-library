@@ -1,4 +1,4 @@
-import EditGameForm from "@/components/forms/editGameForm";
+import EditGameForm from "@/backup/components/forms/editGameForm";
 import { fetchGame } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
 

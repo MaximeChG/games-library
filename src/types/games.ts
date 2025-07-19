@@ -23,7 +23,7 @@ const gameSchema: Schema = new mongoose.Schema({
     },
     consoles: {
         type: [String],
-        required: true
+        required: false
     },
     progress: {
         type: String,
@@ -35,7 +35,7 @@ const gameSchema: Schema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
+        required: false
     },
     playedTimes: {
         type: Number,

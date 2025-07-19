@@ -7,10 +7,8 @@ interface HeaderItemProps {
     link: string
 }
 
-const HeaderItemComponent: FunctionComponent<HeaderItemProps> = ({ text, link }) => {
+export default function HeaderItemComponent({ text, link }: HeaderItemProps) {
     return <Link href={link} className={styles.navItem}>
         {text}
     </Link>
 }
-
-export default HeaderItemComponent;

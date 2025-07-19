@@ -41,6 +41,7 @@ export const GameConsoles: { key: string, value: string }[] = [
     {key: 'pstv', value: "Playstation TV"}, 
     {key: 'xbox', value: "Xbox"}, 
     {key: 'xbox360', value: "Xbox 360"}, 
+    {key: 'emulator', value: "Emulator"},
 ];
 
 

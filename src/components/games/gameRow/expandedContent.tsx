@@ -4,7 +4,7 @@ import RowItem from './rowItem';
 import { ArrayToString } from "@/hooks/util";
 
 interface ExpandedProps {
-    consoles: (string | undefined)[],
+    consoles: (string)[],
     playedTimes: number | undefined,
     progressDescription: string | null | undefined,
     sortTitle: string | null | undefined, 

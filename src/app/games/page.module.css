@@ -9,25 +9,3 @@
     max-height: 70%;
     margin: auto 1%;
 }
-
-.gamesList {
-    list-style: none;
-}
-
-.searchGames {
-    align-items: end;
-    width: 30%;
-}
-
-.searchGames label {
-    margin-right: 1%;
-    color: rgb(114, 8, 107)
-}
-
-.searchGames a {
-    border: 1px black solid;
-    background-color: #d5d5d5;
-    color: rgb(114, 8, 107);
-    margin-left: 1%;
-    padding: 1%;
-}

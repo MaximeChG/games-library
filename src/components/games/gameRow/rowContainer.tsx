@@ -1,33 +1,37 @@
-import { FunctionComponent, useState } from "react";
+'use client';
 import styles from "./row.module.css";
-import { LocalGame } from '../../types/common';
+import { LocalGame } from '../../../types/common';
 import Link from "next/link";
-import { ArrayToString } from "@/hooks/util";
-import { GameState } from "@/data/dropDownLists";
+import { ArrayToString, GetValueArrayByKey } from "@/hooks/util";
+import { deleteGame } from "@/lib/gameActions";
+import { GameConsoles } from "@/data/dropDownLists";
 
 interface rowProps {
     game: LocalGame
 }
 
-const RowContainer: FunctionComponent<rowProps> = ({ game }) => {
+export default function RowContainer ({ game }: rowProps) {
 
     const addedDate = new Date(game.addedDate).toLocaleDateString();
 
-    let consoleString: string = "";
-    if (game.consoles){
-        consoleString = ArrayToString(game.consoles);
+    async function DeleteGame(){
+        await deleteGame(game);
     }
 
-    const progress = GameState.entries();
+    let consoleString: string = "";
+    if (game.consoles){
+        const consoleKeyValueArray = GetValueArrayByKey(GameConsoles, game.consoles);
+        
+        consoleString = ArrayToString(consoleKeyValueArray);
+    }
 
     return <li className={`${styles.gameRow} ${styles[game.progress]}`}>
         <div className={styles.baseContainer}>
             {game.title && <p>{game.title}</p>}
             <p>{consoleString}</p>
             {game.addedDate && <p>{addedDate}</p>}
+            <p onClick={DeleteGame}>Delete</p>
             <Link type="button" className={styles.button} href={`/games/game/${game._id}`}>Edit</Link>
         </div>      
     </li>
 }
-
-export default RowContainer;

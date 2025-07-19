@@ -1,4 +1,4 @@
-import AddGameForm from "@/components/forms/addGameForm";
+import AddGameForm from "@/backup/components/forms/addGameForm";
 
 // Default props variable
 type Props = {

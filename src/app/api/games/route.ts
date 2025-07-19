@@ -8,16 +8,12 @@ import { NextRequest, NextResponse } from "next/server";
 // Called from /lib/gameActions
 
 // Basic Get request for getting 1 game
-export async function GET(request: NextRequest) {    
-    // grab the params for the 1 game
-    const searchParams = request.nextUrl.searchParams;
-    const query = searchParams.get('query');
-    
+export async function GET(request: NextRequest) {        
     await dbConnect();
 
     try {
         // Check if the game can be found
-        const games = query ? await Game.findOne({_id: query}) : await Game.find();
+        const games = await Game.find();
 
         // return the game
         return NextResponse.json(games);

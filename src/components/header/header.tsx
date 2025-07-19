@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
-import HeaderItem from "../header/headerItem";
+import HeaderItem from "./headerItem";
 import styles from "./header.module.css"
 
-const HeaderContainer: FunctionComponent = () => {
+export default function HeaderContainer(){
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
@@ -10,10 +10,7 @@ const HeaderContainer: FunctionComponent = () => {
                 <HeaderItem text="Games" link="/games"/>
                 <HeaderItem text ="List" link="/list" />
                 <HeaderItem text="Reviews" link="/reviews"/>
-                <HeaderItem text="Add Game" link="/games/game"/>
             </nav>
         </header>
     );
 }
-
-export default HeaderContainer;

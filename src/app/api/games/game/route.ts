@@ -65,15 +65,18 @@ export async function PATCH(req: any, res: NextApiResponse) {
 }
 
 // Function to delete game
-export async function DELETE() {
+export async function DELETE(req: any, res: NextApiResponse) {
     await dbConnect();
     // Grab the ID of the game to delete
+    // Grab the new information of the game
+    const data: LocalGame = await req.json();
 
     try {
-        // Find and delete the game based on the id sent
+        // Try to delete the game
+        await Game.deleteOne(data);
 
-        // return success
-
+        // Return success
+        return NextResponse.json({success: true});
     }
     catch (errorMessage: any) {
         // return error message
