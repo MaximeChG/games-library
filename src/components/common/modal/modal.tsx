@@ -7,10 +7,10 @@ interface Props {
     children: React.ReactNode
 }
 
-const Modal = ({ onClose, isOpen, children }: Props) => {
+const Modal = ({ onClose, isOpen = false, children }: Props) => {
     
     return <>
-        <div className={classes.backdrop} onClick={onClose}/>
+        <div className={classes.backdrop}/>
         <dialog className={classes.modal} onClose={onClose} open={isOpen}>
           {children}</dialog>
     </>
