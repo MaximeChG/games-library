@@ -1,4 +1,3 @@
-import { FunctionComponent } from "react";
 import HeaderItem from "./headerItem";
 import styles from "./header.module.css"
 

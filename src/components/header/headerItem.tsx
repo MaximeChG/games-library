@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FunctionComponent } from "react";
 import styles from "./header.module.css";
 
 interface HeaderItemProps {

@@ -1,9 +1,0 @@
-.modal {
-    margin-left: 20%;
-    width: 60%;
-}
-
-.modal::backdrop {
-    overflow: hidden;
-    background-color: black;
-}
