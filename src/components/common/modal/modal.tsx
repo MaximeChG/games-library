@@ -7,8 +7,13 @@ interface Props {
     children: React.ReactNode
 }
 
-const Modal = ({onClose, isOpen, children}: Props) => {
-    return <dialog className={classes.modal} onClose={onClose} open={isOpen}>{children}</dialog>
+const Modal = ({ onClose, isOpen, children }: Props) => {
+    
+    return <>
+        <div className={classes.backdrop}/>
+        <dialog className={classes.modal} onClose={onClose} open={isOpen}>
+          {children}</dialog>
+    </>
 }
 
 export default Modal;

@@ -1,11 +1,11 @@
 import classes from "./button.module.css";
 
 interface Props {
-    onClick?: () => void
-    text: string
-    type: "reset" | "button" | "submit"
+    text: string,
+    type: "reset" | "button" | "submit",
+    onClickHandler: () => void
 }
 
-export default function Button({onClick, text, type}: Props){
-    return <button className={classes.button}type={type} onClick={onClick}>{text}</button>
+export default function Button({ text, type, onClickHandler }: Props){
+    return <button className={classes.button}type={type} onClick={onClickHandler}>{text}</button>
 }
