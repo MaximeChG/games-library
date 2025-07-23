@@ -1,6 +1,10 @@
+import Row from "@/components/common/row/row";
+
 export default async function Page() {
     // For now return the AddGameForm
-    return <h1>Home page</h1>
+    return <Row>
+        <h1>Home page</h1>
+    </Row>
 }
 
 /*
