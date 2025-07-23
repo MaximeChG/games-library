@@ -10,7 +10,7 @@ interface Props {
 const Modal = ({ onClose, isOpen, children }: Props) => {
     
     return <>
-        <div className={classes.backdrop}/>
+        <div className={classes.backdrop} onClick={onClose}/>
         <dialog className={classes.modal} onClose={onClose} open={isOpen}>
           {children}</dialog>
     </>
