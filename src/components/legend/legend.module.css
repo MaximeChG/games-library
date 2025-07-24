@@ -1,0 +1,11 @@
+.legend {
+    margin-top: 2%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.legendContainer {
+    width: 60%;
+}

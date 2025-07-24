@@ -1,13 +1,34 @@
 .button {
-    padding: 1%;
+    padding: 5px;
     color: purple;
     font-size: medium;
 }
 
+.bordered:hover {
+    color: white;   
+    background-color: purple;
+}
+
+
+
 .bordered {
-    border: 1px solid purple;
+    border: 3px solid purple;
 }
 
 .notBorderered {
     border: none;
+    color: white;
+    background-color: purple;
+}
+
+.notBorderered:hover {
+    border: 3px solid purple;
+    color: purple;
+    background-color: white;
+}
+
+.bordered:active,
+.notBorderered:active {
+    color: purple;
+    background-color: rgb(56, 55, 55);
 }

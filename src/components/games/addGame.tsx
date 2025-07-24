@@ -1,4 +1,5 @@
 'use client'
+import classes from "./addGame.module.css";
 import { useState } from "react";
 import Button from "../common/button/button";
 import Row from "../common/row/row";
@@ -15,9 +16,9 @@ export default function AddGame() {
         setIsModalOpen(true);
     }
     return <>
-        <Row>
+        <div className={classes.addGameButton}>
             <Button text={"Add Game"} type={"button"} onClickHandler={ShowModal} bordered={false} />
-        </Row>
+        </div>
         {isModalOpen && <Modal onClose={HideModal} isOpen={isModalOpen}>
             <Row>
                 <p>Add Game Form will go here</p>
