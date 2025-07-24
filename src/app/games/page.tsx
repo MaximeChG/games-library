@@ -18,12 +18,12 @@ export default function GamesPage() {
     return <>
     <Row>
         <h1>Games</h1>
-        <Button text={"Add Game"} type={"button"} onClickHandler={ShowModal} />
+        <Button text={"Add Game"} type={"button"} onClickHandler={ShowModal} bordered={false} />
     </Row>
     {isModalOpen ? <Modal onClose={HideModal} isOpen={isModalOpen}>
         <Row>
             <p>Add Game Form will go here</p>
-            <Button text="Close" type="button" onClickHandler={HideModal}/>
+            <Button text="Close" type="button" onClickHandler={HideModal} bordered={true}/>
         </Row>
     </Modal> : null}
     </>
