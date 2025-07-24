@@ -1,30 +1,24 @@
-'use client'
-import Button from "@/components/common/button/button";
-import Modal from "@/components/common/modal/modal";
 import Row from "@/components/common/row/row";
-import { useState } from "react";
+import AddGame from "@/components/games/addGame";
+import { fetchGames } from "@/lib/gameActions";
+import { LocalGame } from "@/types/common";
 
-export default function GamesPage() {
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+export default async function GamesPage() {
 
-    function HideModal(){
-        setIsModalOpen(false);
-    }
+    const games: LocalGame[] = await fetchGames();
 
-    function ShowModal(){
-        setIsModalOpen(true);
-    }
 
     return <>
-    <Row>
-        <h1>Games</h1>
-        <Button text={"Add Game"} type={"button"} onClickHandler={ShowModal} bordered={false} />
-    </Row>
-    {isModalOpen ? <Modal onClose={HideModal} isOpen={isModalOpen}>
         <Row>
-            <p>Add Game Form will go here</p>
-            <Button text="Close" type="button" onClickHandler={HideModal} bordered={true}/>
+            <AddGame />
+
+            <Row>
+                {games.map((game) => (
+                    <Row key={game._id}><div>
+                        <p>{game.title}</p>
+                    </div></Row>
+                ))}
+            </Row>
         </Row>
-    </Modal> : null}
     </>
 }
