@@ -8,8 +8,8 @@ interface Props {
     inputValue?: number,
 }
 
-export default function NumberInput({ id, name, label, inputValue = 1980 }: Props) {
-    const [newValue, setValue] = useState(inputValue);
+export default function NumberInput({ id, name, label, inputValue}: Props) {
+    const [newValue, setValue] = useState<number>(inputValue ? inputValue : 1980);
 
     function onChange(e: React.ChangeEvent<HTMLInputElement>) {
         setValue(Number(e.target.value));

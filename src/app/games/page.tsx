@@ -1,5 +1,6 @@
 import Row from "@/components/common/row/row";
-import GameModal from "@/components/games/GameModal";
+import GameModal from "@/components/games/gameModal";
+import List from "@/components/games/list/list";
 import LegendContaine from "@/components/legend/legend";
 import { fetchGames } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
@@ -11,16 +12,16 @@ export default async function GamesPage() {
 
     return <>
         <Row>
-            <LegendContaine />
-            <GameModal isEditing={false}/>
+            <div style={{
+                display: "flex",
+                alignItems: "center"
+            }}> 
+                <LegendContaine />
+                <GameModal isEditing={false} />
+            </div>
         </Row>
         <Row>
-            {games.map((game) => (
-                <Row key={game._id}><div>
-                    <p>{game.title}</p>
-                    <GameModal isEditing={true} game={game}/>
-                </div></Row>
-            ))}
+            <List games={games} />
         </Row>
     </>
 }

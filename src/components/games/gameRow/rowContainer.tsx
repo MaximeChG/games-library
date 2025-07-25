@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrayToString, GetValueArrayByKey } from "@/hooks/util";
 import { deleteGame } from "@/lib/gameActions";
 import { GameConsoles } from "@/data/dropDownLists";
+import GameModal from "../gameModal";
+import Button from "@/components/common/button/button";
 
 interface rowProps {
     game: LocalGame
@@ -18,6 +20,7 @@ export default function RowContainer ({ game }: rowProps) {
         await deleteGame(game);
     }
 
+    console.log(game.consoles);
     let consoleString: string = "";
     if (game.consoles){
         const consoleKeyValueArray = GetValueArrayByKey(GameConsoles, game.consoles);
@@ -25,13 +28,13 @@ export default function RowContainer ({ game }: rowProps) {
         consoleString = ArrayToString(consoleKeyValueArray);
     }
 
-    return <li className={`${styles.gameRow} ${styles[game.progress]}`}>
+    return <li className={`${styles.gameRow} ${game.progress}`}>
         <div className={styles.baseContainer}>
             {game.title && <p>{game.title}</p>}
             <p>{consoleString}</p>
             {game.addedDate && <p>{addedDate}</p>}
-            <p onClick={DeleteGame}>Delete</p>
-            <Link type="button" className={styles.button} href={`/games/game/${game._id}`}>Edit</Link>
+            <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={DeleteGame} />
+            <GameModal isEditing={true} game={game}/>
         </div>      
     </li>
 }

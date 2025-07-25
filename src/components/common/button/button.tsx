@@ -3,18 +3,13 @@ import classes from "./button.module.css";
 interface Props {
     text: string,
     type: "reset" | "button" | "submit",
-    onClickHandler?: () => void
-    bordered: boolean
+    onClickHandler?: () => void,
+    buttonClass: string
 }
 
-export default function Button({ text, type, onClickHandler, bordered}: Props) {
-    let buttonClass = "notBorderered";
-
-    if (bordered) {
-        buttonClass = "bordered"
-    }
+export default function Button({ text, type, onClickHandler, buttonClass}: Props) {
     return <button
-        className={`${classes.button} ${classes[buttonClass]}`}
+        className={`${classes.button} ${buttonClass}`}
         type={type}
         onClick={onClickHandler}
     >{text}

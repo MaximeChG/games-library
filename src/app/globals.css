@@ -40,3 +40,245 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Not started section */
+.notStarted {
+  border: 1px solid rgb(18, 18, 18);
+  color: rgb(31, 31, 31);
+}
+
+.notStarted button {
+  border: none;
+  color: rgb(18, 18, 18);
+  background-color: white;
+  font-size: medium;
+}
+
+.notStarted button:hover {
+  background-color: rgb(18, 18, 18);
+  color: white;
+}
+
+.notStarted button:active {
+  color: rgb(18, 18, 18);
+}
+
+/* In Progress section*/
+.inProgress {
+  border: 1px solid rgb(236, 213, 0);
+  color: rgb(236, 213, 0);
+}
+
+.inProgress button {
+  border: none;
+  color: rgb(236, 213, 0);
+  background-color: white;
+  font-size: medium;
+}
+
+.inProgress button:hover {
+  background-color: rgb(236, 213, 0);
+  color: white;
+}
+
+.inProgress button:active {
+  color: rgb(236, 213, 0);
+}
+
+/* First Impression section */
+.firstImpression {
+  border: 1px solid rgb(203, 120, 12);
+  color: rgb(203, 120, 12);
+}
+
+.firstImpression button {
+  border: none;
+  color: rgb(203, 120, 12);
+  background-color: white;
+  font-size: medium;
+}
+
+.firstImpression button:hover {
+  background-color: rgb(203, 120, 12);
+  color: white;
+}
+
+.firstImpression button:active {
+  color: rgb(203, 120, 12);
+}
+
+/*Played section */
+.played {
+  border: 1px solid rgb(152, 213, 10);
+  color: rgb(152, 213, 10);
+}
+
+.played button {
+  border: none;
+  color: rgb(152, 213, 10);
+  background-color: white;
+  font-size: medium;
+}
+
+.played button:hover {
+  background-color: rgb(152, 213, 10);
+  color: white;
+}
+
+.played button:active {
+  color: rgb(152, 213, 10);
+}
+
+/* Finished */
+.finished {
+  border: 1px solid rgb(6, 249, 11);
+  color: rgb(6, 249, 11);
+}
+
+.finished button {
+  border: none;
+  color: rgb(6, 249, 11);
+  background-color: white;
+  font-size: medium;
+}
+
+.finished button:hover {
+  background-color: rgb(6, 249, 11);
+  color: white;
+}
+
+.finished button:active {
+  color: rgb(6, 249, 11);
+}
+
+/* Completed section */
+.completed {
+  border: 1px solid rgb(217, 0, 255);
+  color: rgb(217, 0, 255);
+}
+
+.completed button {
+  border: none;
+  color: rgb(217, 0, 255);
+  background-color: white;
+  font-size: medium;
+}
+
+.completed button:hover {
+  background-color: rgb(217, 0, 255);
+  color: white;
+}
+
+.completed button:active {
+  color: rgb(217, 0, 255);
+}
+
+/*On Hold Section */
+.onHold {
+  border: 1px solid rgb(216, 15, 126);
+  color: rgb(216, 15, 126);
+}
+
+.onHold button {
+  border: none;
+  color: rgb(216, 15, 126);
+  background-color: white;
+  font-size: medium;
+}
+
+.onHold button:hover {
+  background-color: rgb(216, 15, 126);
+  color: white;
+}
+
+.onHold button:active {
+  color: rgb(216, 15, 126);
+}
+
+/*Dropped Section */
+.dropped {
+  border: 1px solid rgb(213, 7, 7);
+  color: rgb(213, 7, 7);
+}
+
+.dropped button {
+  border: none;
+  color: rgb(213, 7, 7);
+  background-color: white;
+  font-size: medium;
+}
+
+.dropped button:hover {
+  background-color: rgb(213, 7, 7);
+  color: white;
+}
+
+.dropped button:active {
+  color: rgb(213, 7, 7);
+}
+
+/*Can't Finish Section */
+.cantFinish {
+  border: 1px solid rgb(7, 175, 144);
+  color: rgb(7, 175, 144);
+}
+
+.cantFinish button {
+  border: none;
+  color: rgb(7, 175, 144);
+  background-color: white;
+  font-size: medium;
+}
+
+.cantFinish button:hover {
+  background-color: rgb(7, 175, 144);
+  color: white;
+}
+
+.cantFinish button:active {
+  color: rgb(203, 120, 12);
+}
+
+/* N/A Section */
+.na {
+  border: 1px solid rgb(67, 9, 174);
+  color: rgb(67, 9, 174);
+}
+
+.na button {
+  border: none;
+  color: rgb(67, 9, 174);
+  background-color: white;
+  font-size: medium;
+}
+
+.na button:hover {
+  background-color: rgb(67, 9, 174);
+  color:white;
+}
+
+.na button:active {
+  color: rgb(67, 9, 174);
+}
+
+/* Unknown Section */
+.unknown {
+  border: 1px solid rgb(0, 181, 241);
+  color: rgb(0, 181, 241);
+}
+
+.unknown button {
+  border: none;
+  color: rgb(0, 181, 241);
+  background-color: white;
+  font-size: medium;
+}
+
+.unknown button:hover {
+  background-color: rgb(0, 181, 241);
+  color: white;
+}
+
+.unknown button:active {
+  color: rgb(0, 181, 241);
+}

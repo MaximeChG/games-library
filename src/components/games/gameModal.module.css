@@ -1,5 +1,15 @@
-.GameButton {
-    margin-top: -1%;
-    width: 10%;
-    float: right;
+.bordered {
+    border: 5px solid purple;
+    color: purple;
+    font-weight: 700;
+}
+
+.bordered:hover {
+    border: 5px solid purple;
+    background-color: purple;
+    color: white;
+}
+
+.bordered:active {
+    color: purple;
 }

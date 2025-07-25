@@ -19,7 +19,7 @@ interface Props {
 
 export default function GameForm({ isEditable, _game, hideModal }: Props) {
     const game: LocalGame = _game ? _game! : BLANKGAME;
-    let consoles: string[] = game.consoles;
+    const consoles: string[] = isEditable ? game.consoles : [];
 
     async function formSubmit(e: FormEvent) {
         e.preventDefault();
@@ -29,7 +29,7 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
             sortTitle: {value: string | null};
             releaseYear: {value: number};
             progress: {value: string};
-            progressDescription: {value: string | undefined};
+            progressDescription: {value: string};
         };
 
         const gameInfo: LocalGame = {
@@ -71,14 +71,14 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
         <Input id={"title"} name={"title"} label={"Title"} isRequired={true} inputValue={game.title}/>
         <Input id={"sortTitle"} name={"sortTitle"} label={"Sort Title"} isRequired={false} inputValue={game.sortTitle}/>
 
-        <CheckGroup array={GameConsoles} arrayOfKeys={game.consoles} legendLabel="Select Consoles Availability" UpdateConsoles={UpdateConsoles} />
+        <CheckGroup array={GameConsoles} arrayOfKeys={consoles} legendLabel="Select Consoles Availability" UpdateConsoles={UpdateConsoles} />
 
         <NumberInput label="Release Year" name="releaseYear" id="releaseYear" inputValue={game.releaseYear}/>
 
         <Dropdown label="Progress" name="progress" id="progress" list={GameState} dropdownValue={game.progress} />
-        <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription}/>
+        <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription} isRequired={true}/>
 
-        <Button type="submit" text="Submit" bordered={true} />
-        <Button text="Close" type="button" onClickHandler={hideModal} bordered={true} />
+        <Button type="submit" text="Submit" buttonClass={""}/>
+        <Button text="Close" type="button" onClickHandler={hideModal} buttonClass={""} />
     </Form>
 }
