@@ -1,4 +1,28 @@
+.h1 {
+    margin: auto;
+    padding: 2%;
+    color: rgb(188, 11, 232);
+}
+
 .form {
-    width: 90%;
-    height: auto;
+    margin: auto;
+    background-color: #444444;
+}
+
+.form select {
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 20%;
+    padding: .5%;
+}
+
+.form input {
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 40%;
+    padding: .5%;
+}
+
+.form label {
+    color: rgb(188, 11, 232);
 }
