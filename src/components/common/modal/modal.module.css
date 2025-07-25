@@ -14,5 +14,5 @@
     width: 60%;
     height: 70%;
     z-index: 1;
-    overflow: hidden;
+    overflow-y: scroll;
 }

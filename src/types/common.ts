@@ -3,7 +3,7 @@ export type LocalGame = {
         title: string,
         sortTitle: string,
         progress: string,
-        progressDescription: string,
+        progressDescription: string | undefined,
         consoles: string[],
         image: string,
         playedTimes: number,

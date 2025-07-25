@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "../form.module.css";
+import Row from "../row/row";
 
 interface Props {
     id: string,
@@ -15,8 +15,8 @@ export default function TextArea({id, name, label, textValue = ''}: Props){
         setValue(e.target.value);
     }
         
-    return <div className={classes.container}>
+    return <Row>
         <label htmlFor={id}>{label}:</label>
-        <textarea className={classes.formTextbox} name={name} id={id} value={newValue} onChange={onChange}/>
-    </div>
+        <textarea name={name} id={id} value={newValue} onChange={onChange}/>
+    </Row>
 }

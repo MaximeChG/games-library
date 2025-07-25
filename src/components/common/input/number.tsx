@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "../form.module.css";
+import Row from "../row/row";
 
 interface Props {
     id: string,
@@ -15,8 +15,8 @@ export default function NumberInput({ id, name, label, inputValue = 1980 }: Prop
         setValue(Number(e.target.value));
     }
 
-    return <div className={classes.container}>
+    return <Row>
         <label htmlFor={id}>{label}:</label>
-        <input className={classes.formInput} type="number" name={name} id={id} min="1980" max="2070" value={newValue} onChange={onChange} />
-    </div>
+        <input type="number" name={name} id={id} min="1980" max="2070" value={newValue} onChange={onChange} />
+    </Row>
 }

@@ -1,12 +1,13 @@
-.h1 {
-    margin: auto;
-    padding: 2%;
-    color: rgb(188, 11, 232);
-}
-
 .form {
     margin: auto;
     background-color: #444444;
+    text-align: center;
+}
+
+.form h1 {
+    margin: auto;
+    padding: 2%;
+    color: rgb(188, 11, 232);
 }
 
 .form select {
@@ -25,4 +26,8 @@
 
 .form label {
     color: rgb(188, 11, 232);
+}
+
+.form button {
+    margin: 1% 20%;
 }

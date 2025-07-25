@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "../form.module.css";
+import Row from "../row/row";
 
 
 interface Props {
@@ -17,12 +17,12 @@ export default function Dropdown({label, name, id, list, dropdownValue = "Not St
         setValue(e.target.value);
     }
     
-    return <div className={classes.container}>
+    return <Row>
         <label htmlFor={name}>{label}:</label>
-        <select className={classes.formDropdown} name={name} id={id} value={newValue} onChange={onChange}>
+        <select name={name} id={id} value={newValue} onChange={onChange}>
             {list.map((listItem) => (
                 <option key={listItem.key} value={listItem.key}>{listItem.value}</option>
             ))}
         </select>
-    </div>
+    </Row>
 }

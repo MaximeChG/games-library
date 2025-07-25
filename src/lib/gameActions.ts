@@ -30,13 +30,13 @@ export const addGame = async (game: LocalGame) => {
     return redirect("/games");
 }
 
-export const updateGame = async (game: LocalGame) => {
+export const updateGame = async (game: LocalGame, _id: string) => {
     await fetch("http://localhost:3000/api/games/game", {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(game)
+        body: JSON.stringify({game, _id})
     });
     return redirect("/games");
 }

@@ -1,5 +1,5 @@
 import Row from "@/components/common/row/row";
-import AddGame from "@/components/games/addGame";
+import GameModal from "@/components/games/GameModal";
 import LegendContaine from "@/components/legend/legend";
 import { fetchGames } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
@@ -12,12 +12,13 @@ export default async function GamesPage() {
     return <>
         <Row>
             <LegendContaine />
-            <AddGame />
+            <GameModal isEditing={false}/>
         </Row>
         <Row>
             {games.map((game) => (
                 <Row key={game._id}><div>
                     <p>{game.title}</p>
+                    <GameModal isEditing={true} game={game}/>
                 </div></Row>
             ))}
         </Row>

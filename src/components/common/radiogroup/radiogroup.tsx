@@ -1,4 +1,4 @@
-import CheckBox from "./checkbox";
+import CheckBox from "../checkbox/checkbox"
 
 interface Props {
     legendLabel: string

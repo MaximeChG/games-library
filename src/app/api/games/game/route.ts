@@ -49,11 +49,11 @@ export async function PATCH(req: any, res: NextApiResponse) {
     await dbConnect();
 
     // Grab the new information of the game
-    const data: LocalGame = await req.json();
+    const data: {game: LocalGame, _id: string} = await req.json();
 
     try {
         // Try to find the game based on the ID send to the function and update with the new data
-        await Game.findByIdAndUpdate(data._id, data, {new: false});
+        await Game.findByIdAndUpdate(data._id, data.game, {new: false});
 
         // Return success
         return NextResponse.json({success: true});
