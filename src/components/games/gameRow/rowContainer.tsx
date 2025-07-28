@@ -1,7 +1,6 @@
 'use client';
 import styles from "./row.module.css";
 import { LocalGame } from '../../../types/common';
-import Link from "next/link";
 import { ArrayToString, GetValueArrayByKey } from "@/hooks/util";
 import { deleteGame } from "@/lib/gameActions";
 import { GameConsoles } from "@/data/dropDownLists";
@@ -20,9 +19,8 @@ export default function RowContainer ({ game }: rowProps) {
         await deleteGame(game);
     }
 
-    console.log(game.consoles);
     let consoleString: string = "";
-    if (game.consoles){
+    if (game.consoles.length > 0){
         const consoleKeyValueArray = GetValueArrayByKey(GameConsoles, game.consoles);
         
         consoleString = ArrayToString(consoleKeyValueArray);
