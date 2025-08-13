@@ -1,4 +1,5 @@
 import { LocalGame } from "@/types/common";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const fetchGames = async () => {
@@ -27,7 +28,7 @@ export const addGame = async (game: LocalGame) => {
         body: JSON.stringify(game)
     });
 
-    return redirect("/games");
+    return revalidatePath("/games");
 }
 
 export const updateGame = async (game: LocalGame, _id: string) => {
@@ -38,7 +39,7 @@ export const updateGame = async (game: LocalGame, _id: string) => {
         },
         body: JSON.stringify({game, _id})
     });
-    return redirect("/games");
+    return revalidatePath("/games");
 }
 
 export const deleteGame = async (game: LocalGame) => {
