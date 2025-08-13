@@ -11,6 +11,7 @@ export const fetchGames = async () => {
 }
 
 export const fetchGame = async (_id: string) => {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     const res = await fetch(`http://localhost:3000/api/games/game?query=${_id}`, {
         cache: 'no-store'
     });
@@ -28,7 +29,7 @@ export const addGame = async (game: LocalGame) => {
         body: JSON.stringify(game)
     });
 
-    return revalidatePath("/games");
+    return redirect("/games");
 }
 
 export const updateGame = async (game: LocalGame, _id: string) => {
@@ -39,7 +40,7 @@ export const updateGame = async (game: LocalGame, _id: string) => {
         },
         body: JSON.stringify({game, _id})
     });
-    return revalidatePath("/games");
+    return redirect("/games");
 }
 
 export const deleteGame = async (game: LocalGame) => {

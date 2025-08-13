@@ -45,8 +45,9 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
             addedDate: new Date()
         }
 
-        hideModal();
+
         isEditable ? await updateGame(gameInfo, game._id!) : await addGame(gameInfo);
+        hideModal();
 
     }
 
