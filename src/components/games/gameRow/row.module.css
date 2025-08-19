@@ -9,8 +9,13 @@
 .gameRow button,
 .gameRow a{
     font-size: small;
-    width: 15%;
-}   
+    width: 25%;
+}
+
+.gameRow a,
+.gameRow button {
+    width: 10%;
+}
 
 .baseContainer {
     display: flex;
