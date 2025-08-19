@@ -1,52 +1,17 @@
 .gameRow {
     margin: 1% auto;
-    padding: 1%;
+    padding: .1% 1%;
     box-shadow: 0 2px 2px 1px;
     background-color: rgb(255, 255, 255);
 }
+
+.gameRow p,
+.gameRow button{
+    font-size: small;
+}   
 
 .baseContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.expandedContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.lineBreak {
-    border: 1px solid rgba(3, 3, 3, 0.214);
-    margin: 1%;
-}
-.image {
-    max-width: 5rem;
-    max-height: 5rem;
-}
-
-.buttonsRow {
-    margin: 1%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0;
-}
-
-.buttonsRow a {
-    border: 1px black solid;
-    background-color: rgb(230, 230, 230);
-}
-
-.button {
-    padding: .5%;
-    font-weight: bold;
-    font-size: large;
-    margin: 1%;
-    margin-bottom: 0
-}
-
-.updates {
-    margin-top: 1%;
-    text-align: center;
 }

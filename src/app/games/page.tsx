@@ -2,14 +2,17 @@ import Row from "@/components/common/row/row";
 import GameModal from "@/components/games/gameModal";
 import List from "@/components/games/list/list";
 import LegendContaine from "@/components/legend/legend";
-import { fetchGames } from "@/lib/gameActions";
+import { FetchGames } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
+import { Suspense } from "react";
 
-export default async function GamesPage() {
+export async function Games(){
+    const games: LocalGame[] = await FetchGames();
 
-    const games: LocalGame[] = await fetchGames();
+    return <List games={games} />
+}
 
-
+export default function GamesPage() {
     return <>
         <Row>
             <div style={{
@@ -21,7 +24,11 @@ export default async function GamesPage() {
             </div>
         </Row>
         <Row>
-            <List games={games} />
+            <Suspense fallback={
+                <h3>Fetching Games...</h3>
+            }>
+                <Games />
+            </Suspense>  
         </Row>
     </>
 }

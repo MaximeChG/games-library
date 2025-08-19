@@ -9,7 +9,8 @@ import CheckGroup from "../common/radiogroup/radiogroup";
 import NumberInput from "../common/input/number";
 import Dropdown from "../common/dropdown/dropdown";
 import TextArea from "../common/input/textbox";
-import { addGame, updateGame } from "@/lib/gameActions";
+import { AddGame, UpdateGame } from "@/lib/gameActions";
+import { revalidatePath } from "next/cache";
 
 interface Props {
     isEditable: boolean,
@@ -46,7 +47,7 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
         }
 
 
-        isEditable ? await updateGame(gameInfo, game._id!) : await addGame(gameInfo);
+        isEditable ? await UpdateGame(gameInfo, game._id!) : await AddGame(gameInfo);
         hideModal();
 
     }

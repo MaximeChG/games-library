@@ -1,8 +1,9 @@
+'use server'
 import { LocalGame } from "@/types/common";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export const fetchGames = async () => {
+export async function FetchGames() {
     const res = await fetch("http://localhost:3000/api/games", {
         cache: 'no-store'
     });
@@ -10,7 +11,7 @@ export const fetchGames = async () => {
     return games;
 }
 
-export const fetchGame = async (_id: string) => {
+export async function FetchGame(_id: string) {
     await new Promise((resolve) => setTimeout(resolve, 5000));
     const res = await fetch(`http://localhost:3000/api/games/game?query=${_id}`, {
         cache: 'no-store'
@@ -19,7 +20,7 @@ export const fetchGame = async (_id: string) => {
     return game;
 }
 
-export const addGame = async (game: LocalGame) => {
+export async function AddGame(game: LocalGame) {
 
     await fetch("http://localhost:3000/api/games/game", {
         method: "PUT",
@@ -29,21 +30,21 @@ export const addGame = async (game: LocalGame) => {
         body: JSON.stringify(game)
     });
 
-    return redirect("/games");
+    return revalidatePath("/games");
 }
 
-export const updateGame = async (game: LocalGame, _id: string) => {
+export async function UpdateGame(game: LocalGame, _id: string) {
     await fetch("http://localhost:3000/api/games/game", {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({game, _id})
+        body: JSON.stringify({ game, _id })
     });
-    return redirect("/games");
+    return revalidatePath("/games");
 }
 
-export const deleteGame = async (game: LocalGame) => {
+export async function DeleteGame(game: LocalGame) {
 
     await fetch("http://localhost:3000/api/games/game", {
         method: "DELETE",
@@ -52,5 +53,5 @@ export const deleteGame = async (game: LocalGame) => {
         },
         body: JSON.stringify(game)
     });
-    return redirect("/games");
+    return revalidatePath("/games");
 }
