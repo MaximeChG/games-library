@@ -24,13 +24,11 @@ export default function GameModal({ isEditing, game }: Props) {
     }
 
     return <>
-        <div className={classes.buttonContainer}>
-            <Button
-                text={isEditing ? "Edit Game" : "Add Game"}
-                type={"button"}
-                onClickHandler={ShowModal}
-                buttonClass={isEditing ? `notBordered${game?.progress}` : `${classes.bordered}`} />
-        </div>
+        <Button
+            text={isEditing ? "Edit Game" : "Add Game"}
+            type={"button"}
+            onClickHandler={ShowModal}
+            buttonClass={isEditing ? `notBordered${game?.progress}` : `${classes.bordered}`} />
         <div>
             {isModalOpen && <Modal onClose={HideModal} isOpen={isModalOpen}>
                 <Row>

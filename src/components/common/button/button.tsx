@@ -1,3 +1,4 @@
+"use client";
 import classes from "./button.module.css";
 
 interface Props {

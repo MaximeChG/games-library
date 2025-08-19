@@ -18,11 +18,11 @@ export async function Game({id} : GameProps){
     </main>
 } 
 
-export default function GameDetailsPage({params}: Props){
+export default async function GameDetailsPage({params}: Props){
     
     return <main>
         <Suspense fallback={<h3>Fetching Game...</h3>}>
-            <Game id={params.gameSlug}/>
+            <Game id={ await params.gameSlug}/>
         </Suspense>
         
     </main>

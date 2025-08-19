@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classes from "./checkbox.module.css";
 
 interface Props {
     id: string,
@@ -15,8 +16,11 @@ export default function CheckBox ({id, value, checked = false, onChecked}: Props
         onChecked(e.target.checked, id);
     }
 
-    return <div>
-            <input type="checkbox" name={id} checked={isChecked} value={id} onChange={onChange}/>
-            <label>{value}</label>
+    return <div className={classes.container}>
+            
+            <label>
+                <input type="checkbox" name={id} checked={isChecked} value={id} onChange={onChange} className={classes.checkbox}/>
+                {value}
+            </label>
     </div>
 }

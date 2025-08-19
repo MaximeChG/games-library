@@ -6,8 +6,10 @@
 }
 
 .gameRow p,
-.gameRow button{
+.gameRow button,
+.gameRow a{
     font-size: small;
+    width: 15%;
 }   
 
 .baseContainer {

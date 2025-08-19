@@ -1,4 +1,4 @@
-'use client';
+"use client"
 import styles from "./row.module.css";
 import { LocalGame } from '../../../types/common';
 import { ArrayToString, GetValueArrayByKey } from "@/hooks/util";
@@ -34,7 +34,7 @@ export default function RowContainer ({ game }: rowProps) {
             {game.addedDate && <p>{addedDate}</p>}
             <Link href={`/games/${game._id}`}>View Game</Link>
             <GameModal isEditing={true} game={game}/>
-            <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={DeleteGameHandler} />
+            <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={(DeleteGameHandler)} />
         </div>      
     </li>
 }

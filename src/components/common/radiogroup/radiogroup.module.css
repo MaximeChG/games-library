@@ -1,0 +1,12 @@
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgb(188, 11, 232);
+    margin: 1%;
+    padding: 1%;
+}
+
+.group legend {
+    color: rgb(188, 11, 232);
+    font-weight: bold;
+}
