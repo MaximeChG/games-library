@@ -6,6 +6,7 @@ import { DeleteGame } from "@/lib/gameActions";
 import { GameConsoles } from "@/data/dropDownLists";
 import GameModal from "../gameModal";
 import Button from "@/components/common/button/button";
+import Link from "next/link";
 
 interface rowProps {
     game: LocalGame
@@ -31,8 +32,9 @@ export default function RowContainer ({ game }: rowProps) {
             {game.title && <p>{game.title}</p>}
             <p>{consoleString}</p>
             {game.addedDate && <p>{addedDate}</p>}
-            <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={DeleteGameHandler} />
+            <Link href={`/games/${game._id}`}>View Game</Link>
             <GameModal isEditing={true} game={game}/>
+            <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={DeleteGameHandler} />
         </div>      
     </li>
 }
