@@ -9,6 +9,9 @@
 .gameRow button,
 .gameRow a{
     font-size: small;
+}
+
+.gameRow p{
     width: 25%;
 }
 
