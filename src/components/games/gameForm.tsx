@@ -1,3 +1,4 @@
+
 import { BLANKGAME } from "@/data/mockGames";
 import { LocalGame } from "@/types/common";
 import Form from "../common/form/form";
@@ -10,7 +11,7 @@ import NumberInput from "../common/input/number";
 import Dropdown from "../common/dropdown/dropdown";
 import TextArea from "../common/input/textbox";
 import { AddGame, UpdateGame } from "@/lib/gameActions";
-import { revalidatePath } from "next/cache";
+import FormSubmitButton from "../common/form/formSubmitButton";
 
 interface Props {
     isEditable: boolean,
@@ -22,7 +23,7 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
     const game: LocalGame = _game ? _game! : BLANKGAME;
     const consoles: string[] = isEditable ? game.consoles : [];
 
-    async function formSubmit(e: FormEvent) {
+    function formSubmit(e: FormEvent) {
         e.preventDefault();
 
         const formData = e.target as typeof e.target & {
@@ -47,9 +48,7 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
         }
 
 
-        isEditable ? await UpdateGame(gameInfo, game._id!) : await AddGame(gameInfo);
-        hideModal();
-
+        isEditable ? UpdateGame(gameInfo, game._id!) : AddGame(gameInfo);
     }
 
     function UpdateConsoles(isChecked: boolean, _id: string) {
@@ -80,7 +79,7 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
         <Dropdown label="Progress" name="progress" id="progress" list={GameState} dropdownValue={game.progress} />
         <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription} isRequired={true}/>
 
-        <Button type="submit" text="Submit" buttonClass={""}/>
+        <FormSubmitButton/>
         <Button text="Close" type="button" onClickHandler={hideModal} buttonClass={""} />
     </Form>
 }
