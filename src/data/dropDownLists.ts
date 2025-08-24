@@ -16,20 +16,22 @@ export const GameConsoles: { key: string, value: string }[] = [
     { key: 'steam', value: "Steam"},
     { key: 'epicGames', value: "Epic Games" },
     { key: 'pc', value: "PC" },
+
     { key: 'nes', value: "NES" },
     { key: 'nesMini', value: "NES Mini" },
     { key: 'snesMini', value: "SNES Mini" },
     { key: 'n64', value: "Nintendo 64" },
     { key: 'gcn', value: "GameCube" },
     { key: 'wii', value: "Wii" },
-    { key: 'wiiU', value: "wiiU" },
+    { key: 'wiiU', value: "Wii U" },
     { key: 'switch', value: "Switch" },
     { key: 'switchO', value: "Switch Online" },
     { key: 'gb', value: "GameBoy" },
     { key: 'gbc', value: "GameBoy Color" },
     { key: 'gba', value: "GameBoy Advance" },
-    { key: 'nds', value: "Nintedo DS" },
+    { key: 'nds', value: "Nintendo DS" },
     { key: 'n3ds', value: "Nintendo 3DS" },
+
     {key: 'ps1', value: "Playstation 1"}, 
     {key: 'psMini', value: "Playstation Mini"}, 
     {key: 'ps2', value: "Playstation 2"}, 
@@ -39,8 +41,10 @@ export const GameConsoles: { key: string, value: string }[] = [
     {key: 'psn', value: "Playstation Network"}, 
     {key: 'psp', value: "Playstion Portable"}, 
     {key: 'pstv', value: "Playstation TV"}, 
+
     {key: 'xbox', value: "Xbox"}, 
     {key: 'xbox360', value: "Xbox 360"}, 
+
     {key: 'emulator', value: "Emulator"},
 ];
 

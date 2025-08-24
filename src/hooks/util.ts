@@ -89,4 +89,16 @@ export function GetNotFound(arr: { key: string, value: string }[]) {
 }
 
 
-// function to edit the consoles string
+// function to turn a string to an array
+export function StringToArray(text: string){
+
+    if (text.length > 0) {
+        const arrayOfStrings: string[] = text.split(',');
+
+        return arrayOfStrings;
+    }
+    else {
+        return [];
+    }
+    
+}

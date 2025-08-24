@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function Form({children, onFormSubmit} :Props) {
-    return <form className={classes.form} onSubmit={onFormSubmit}>{children}</form>
+    return <form className={classes.form} action={onFormSubmit}>{children}</form>
 }
