@@ -64,6 +64,7 @@ export async function UpdateGame(formData: FormData) {
         tempConsoles = "";
     }
     const _consoles = StringToArray(tempConsoles?.toString()); 
+    console.log(_consoles);
     
 
     const game: LocalGame = {
@@ -84,7 +85,7 @@ export async function UpdateGame(formData: FormData) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({game})
+        body: JSON.stringify({game: game, _id: game._id})
     });
     return revalidatePath("/games");
 }
