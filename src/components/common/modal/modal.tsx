@@ -1,19 +1,10 @@
-import React from "react";
+import { PropsWithChildren } from "react";
 import classes from "./modal.module.css";
 
-interface Props {
-    onClose: () => void,
-    isOpen: boolean,
-    children: React.ReactNode
-}
-
-const Modal = ({ onClose, isOpen = false, children }: Props) => {
-    
+export default function Modal({children} : PropsWithChildren){
     return <>
         <div className={classes.backdrop}/>
-        <dialog className={classes.modal} onClose={onClose} open={isOpen}>
-          {children}</dialog>
+        <dialog className={classes.modal}>
+        {children}</dialog>
     </>
 }
-
-export default Modal;

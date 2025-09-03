@@ -1,4 +1,6 @@
+import Modal from "@/components/common/modal/modal";
 import Row from "@/components/common/row/row";
+import GameForm from "@/components/games/gameForm";
 import GameModal from "@/components/games/gameModal";
 import List from "@/components/games/list/list";
 import LegendContaine from "@/components/legend/legend";
@@ -12,7 +14,14 @@ export async function Games(){
     return <List games={games} />
 }
 
-export default function GamesPage() {
+export type Props = {
+    searchParams: Record<string, string> | null | undefined;
+}
+
+export default async function GamesPage(props: Props) {
+    const { searchParams } = await props;
+    const showModal =  searchParams?.modal === 'true';
+    console.log(showModal);
     return <>
         <Row>
             <div style={{
@@ -31,4 +40,5 @@ export default function GamesPage() {
             </Suspense>  
         </Row>
     </>
+    {showModal && <Modal><GameForm isEditable={false}/></Modal>}
 }

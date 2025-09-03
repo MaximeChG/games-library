@@ -3,7 +3,7 @@ import { LocalGame } from "@/types/common";
 import { Suspense } from "react";
 
 interface Props {
-    params: any
+    params: Promise<any>
 }
 
 interface GameProps {
@@ -18,8 +18,9 @@ export async function Game({id} : GameProps){
     </main>
 } 
 
-export default async function GameDetailsPage({params}: Props){
-    
+export default async function GameDetailsPage(props: Props) {
+    const params = await props.params;
+
     return <main>
         <Suspense fallback={<h3>Fetching Game...</h3>}>
             <Game id={ await params.gameSlug}/>

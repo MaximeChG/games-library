@@ -1,4 +1,4 @@
-
+"use client";
 import classes from "./gameForm.module.css";
 import { BLANKGAME } from "@/data/mockGames";
 import { LocalGame } from "@/types/common";
@@ -17,10 +17,9 @@ import FormSubmitButton from "../common/form/formSubmitButton";
 interface Props {
     isEditable: boolean,
     _game?: LocalGame,
-    hideModal: () => void,
 }
 
-export default function GameForm({ isEditable, _game, hideModal }: Props) {
+export default function GameForm({ isEditable, _game }: Props) {
     const game: LocalGame = _game ? _game! : BLANKGAME;
     const consoleRef = useRef<HTMLInputElement>(null);
     const consoles = isEditable ? game.consoles : [];
