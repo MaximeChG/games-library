@@ -1,0 +1,18 @@
+.progressContainer,
+.gameInfoContainer {
+    display: flex;
+    text-align: left;
+}
+
+.gameInfoContainer input,
+.progressContainer textarea {
+    width: 100%;
+}
+
+.titleContainer label {
+    width: 10%;
+}
+
+.progressContainer textarea {
+    margin-left: 5px;
+}

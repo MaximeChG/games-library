@@ -1,3 +1,5 @@
+
+import classes from "./gameForm.module.css";
 import { BLANKGAME } from "@/data/mockGames";
 import { LocalGame } from "@/types/common";
 import Form from "../common/form/form";
@@ -43,16 +45,21 @@ export default function GameForm({ isEditable, _game, hideModal }: Props) {
 
     return <Form onFormSubmit={isEditable ? UpdateGame : AddGame}>
         <h1>{isEditable ? "Edit Game" : "Add Game"}</h1>
-        <input type="text" name="id" hidden value={isEditable ? game._id : ""} readOnly/> 
-        <Input id={"title"} name={"title"} label={"Title"} isRequired={true} inputValue={game.title}/>
-        <Input id={"sortTitle"} name={"sortTitle"} label={"Sort Title"} isRequired={false} inputValue={game.sortTitle} />
+        <input type="text" name="id" hidden value={isEditable ? game._id : ""} readOnly />
+
+        <div className={classes.gameInfoContainer}>
+            <Input id={"title"} name={"title"} label={"Title"} isRequired={true} inputValue={game.title} />
+            <Input id={"sortTitle"} name={"sortTitle"} label={"Sort Title"} isRequired={false} inputValue={game.sortTitle} />
+            <NumberInput label="Release Year" name="releaseYear" id="releaseYear" inputValue={game.releaseYear} />
+        </div>
 
         <CheckGroup array={GameConsoles} arrayOfKeys={consoles} legendLabel="Select Consoles Availability" UpdateConsoles={UpdateConsoles} />
-        <input type="text" id="consoleString" name="consoleString" ref={consoleRef} defaultValue={consoles.toString()} readOnly />
-        <NumberInput label="Release Year" name="releaseYear" id="releaseYear" inputValue={game.releaseYear} />
+        <input type="text" id="consoleString" name="consoleString" ref={consoleRef} defaultValue={consoles.toString()} readOnly hidden />
 
-        <Dropdown label="Progress" name="progress" id="progress" list={GameState} dropdownValue={game.progress} />
-        <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription} isRequired={true} />
+        <div className={classes.progressContainer}>
+            <Dropdown label="Progress" name="progress" id="progress" list={GameState} dropdownValue={game.progress} />
+            <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription} isRequired={true} />
+        </div>
 
         <FormSubmitButton />
         <Button text="Close" type="button" onClickHandler={hideModal} buttonClass={""} />

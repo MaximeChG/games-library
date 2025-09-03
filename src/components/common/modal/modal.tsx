@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, PropsWithChildren } from "react";
+import React from "react";
 import classes from "./modal.module.css";
 
 interface Props {
