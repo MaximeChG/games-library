@@ -2,6 +2,8 @@
 import { StringToArray } from "@/hooks/util";
 import { LocalGame } from "@/types/common";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/dist/server/api-utils";
+import { permanentRedirect } from "next/navigation";
 import { NextRequest } from "next/server";
 
 export async function FetchGames() {
@@ -44,15 +46,19 @@ export async function AddGame( formData: FormData) {
     };
 
     await new Promise((resolve) => setTimeout(resolve, 5000));  
-    await fetch("http://localhost:3000/api/games/game", {
+    const response = await fetch("http://localhost:3000/api/games/game", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(game)
     });
-
-    return revalidatePath("/games");
+    if(response.status == 200) {
+        permanentRedirect("/games");
+    }
+    else {
+        return response.statusText;
+    }
 }
 
 export async function UpdateGame(formData: FormData) {

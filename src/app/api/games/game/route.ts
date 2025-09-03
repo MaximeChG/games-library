@@ -36,11 +36,17 @@ export async function PUT(req: any, res: NextApiResponse) {
         await Game.create(data);
 
         // return the success
-        return NextResponse.json({success: true});
+        return new Response("Game Successfully Added", {
+            status: 200,
+            statusText: "Game Added"
+        });
     }
     catch (errorMessage: any) {
         // return error message
-        return NextResponse.json({error: errorMessage.message});
+        return new Response("Game Successfully Added", {
+            status: 500,
+            statusText: "Game Failed to be added"
+        });
     }
 }
 

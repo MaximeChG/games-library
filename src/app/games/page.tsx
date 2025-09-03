@@ -7,7 +7,6 @@ import LegendContainer from "@/components/legend/legend";
 import { FetchGames } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
 import { Suspense } from "react";
-import { Game } from "./[gameSlug]/page";
 
 export async function Games() {
     const games: LocalGame[] = await FetchGames();
