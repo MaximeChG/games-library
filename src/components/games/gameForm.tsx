@@ -61,6 +61,5 @@ export default function GameForm({ isEditable, _game }: Props) {
         </div>
 
         <FormSubmitButton />
-        <Button text="Close" type="button" onClickHandler={hideModal} buttonClass={""} />
     </Form>
 }

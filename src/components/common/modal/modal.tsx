@@ -4,7 +4,7 @@ import classes from "./modal.module.css";
 export default function Modal({children} : PropsWithChildren){
     return <>
         <div className={classes.backdrop}/>
-        <dialog className={classes.modal}>
+        <dialog className={classes.modal} open={true}>
         {children}</dialog>
     </>
 }

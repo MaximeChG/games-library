@@ -3,12 +3,13 @@ import Row from "@/components/common/row/row";
 import GameForm from "@/components/games/gameForm";
 import GameModal from "@/components/games/gameModal";
 import List from "@/components/games/list/list";
-import LegendContaine from "@/components/legend/legend";
+import LegendContainer from "@/components/legend/legend";
 import { FetchGames } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
 import { Suspense } from "react";
+import { Game } from "./[gameSlug]/page";
 
-export async function Games(){
+export async function Games() {
     const games: LocalGame[] = await FetchGames();
 
     return <List games={games} />
@@ -20,16 +21,16 @@ export type Props = {
 
 export default async function GamesPage(props: Props) {
     const { searchParams } = await props;
-    const showModal =  searchParams?.modal === 'true';
+    const showModal = searchParams?.modal === 'true';
     console.log(showModal);
-    return <>
+    return <main>
         <Row>
             <div style={{
                 display: "flex",
                 alignItems: "center"
-            }}> 
-                <LegendContaine />
-                <GameModal isEditing={false} />
+            }}>
+                <LegendContainer />
+                <GameModal />
             </div>
         </Row>
         <Row>
@@ -37,8 +38,9 @@ export default async function GamesPage(props: Props) {
                 <h3>Fetching Games...</h3>
             }>
                 <Games />
-            </Suspense>  
+            </Suspense>
         </Row>
-    </>
-    {showModal && <Modal><GameForm isEditable={false}/></Modal>}
+        {showModal && <Modal>{<GameForm isEditable={false}/>}</Modal>}
+    </main>
+
 }
