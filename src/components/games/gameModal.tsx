@@ -2,18 +2,16 @@
 import { useState } from "react";
 import classes from "./gameModal.module.css";
 import Button from "../common/button/button";
-import Row from "../common/row/row";
-import Modal from "../common/modal/modalBackup";
-import GameForm from "./gameForm";
 import { LocalGame } from "@/types/common";
 import Link from "next/link";
 
 interface Props {
     game?: LocalGame
+    isEditing: boolean
 }
 
-export default function GameModal({ game }: Props) {
+export default function GameModal({ game, isEditing }: Props) {
     return <>
-        <Link href={"/games?modal=true"}>Add Game</Link>
+        <Link href={"/games?modal=true"}><Button text={isEditing ? "Edit Game" : "Add Game"} type={"button"} buttonClass={"bordered"} /></Link>
     </>
 }
