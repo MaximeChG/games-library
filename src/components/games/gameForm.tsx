@@ -13,6 +13,7 @@ import Dropdown from "../common/dropdown/dropdown";
 import TextArea from "../common/input/textbox";
 import { AddGame, UpdateGame } from "@/lib/gameActions";
 import FormSubmitButton from "../common/form/formSubmitButton";
+import Link from "next/link";
 
 interface Props {
     isEditable: boolean,
@@ -41,6 +42,16 @@ export default function GameForm({ isEditable, _game }: Props) {
         consoleRef.current!.value = consoles.toString();
     }
 
+    function CloseForm(){
+        console.log(isEditable);
+        if (isEditable){
+            return `/games/${game._id}`;
+        }
+        else{
+            return "/games";
+        }
+    }
+
 
     return <Form onFormSubmit={isEditable ? UpdateGame : AddGame}>
         <h1>{isEditable ? "Edit Game" : "Add Game"}</h1>
@@ -60,6 +71,7 @@ export default function GameForm({ isEditable, _game }: Props) {
             <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription} isRequired={true} />
         </div>
 
+        <Link href={CloseForm()}>Cancel</Link>
         <FormSubmitButton />
     </Form>
 }

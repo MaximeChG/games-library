@@ -33,7 +33,6 @@ export default function RowContainer ({ game }: rowProps) {
             <p>{consoleString}</p>
             {game.addedDate && <p>{addedDate}</p>}
             <Link href={`/games/${game._id}`}>View Game</Link>
-            <GameModal isEditing={true} game={game}/>
             <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={(DeleteGameHandler)} />
         </div>      
     </li>

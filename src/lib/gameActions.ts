@@ -15,7 +15,6 @@ export async function FetchGames() {
 }
 
 export async function FetchGame(_id: string) {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
     const res = await fetch(`http://localhost:3000/api/games/game?query=${_id}`, {
         cache: 'no-store'
     });

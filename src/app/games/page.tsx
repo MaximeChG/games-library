@@ -23,7 +23,7 @@ export type Props = {
 export default async function GamesPage(props: Props) {
     const { searchParams } = await props;
     const showModal = searchParams?.modal === 'true';
-    console.log(showModal);
+
     return <main>
         <Row>
             <div style={{
