@@ -1,3 +1,4 @@
+import Button from "@/components/common/button/button";
 import Modal from "@/components/common/modal/modal";
 import Row from "@/components/common/row/row";
 import GameForm from "@/components/games/gameForm";
@@ -6,6 +7,7 @@ import List from "@/components/games/list/list";
 import LegendContainer from "@/components/legend/legend";
 import { FetchGames } from "@/lib/gameActions";
 import { LocalGame } from "@/types/common";
+import Link from "next/link";
 import { Suspense } from "react";
 
 export async function Games() {
@@ -29,7 +31,7 @@ export default async function GamesPage(props: Props) {
                 alignItems: "center"
             }}>
                 <LegendContainer />
-                <GameModal />
+                <Link href={"/games?modal=true"}><Button text={"Add Game"} type={"button"} buttonClass={"bordered"} /></Link>
             </div>
         </Row>
         <Row>
