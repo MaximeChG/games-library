@@ -31,8 +31,9 @@ export default function RowContainer ({ game }: rowProps) {
         <div className={styles.baseContainer}>
             {game.title && <p>{game.title}</p>}
             <p>{consoleString}</p>
+            {game.interest && <p>{game.interest}</p>}
             {game.addedDate && <p>{addedDate}</p>}
-            <Link href={`/games/${game._id}`}>View Game</Link>
+            <Link className={game.progress} href={`/games/${game._id}`}>View Game</Link>
             <Button text={"Delete"} type={"button"} buttonClass={`${game.progress}`} onClickHandler={(DeleteGameHandler)} />
         </div>      
     </li>

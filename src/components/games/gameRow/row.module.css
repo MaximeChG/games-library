@@ -20,6 +20,11 @@
     width: 10%;
 }
 
+.gameRow a {
+    padding: 1%;
+    text-align: center;
+}
+
 .baseContainer {
     display: flex;
     justify-content: space-between;

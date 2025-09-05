@@ -45,7 +45,6 @@ export async function AddGame( formData: FormData) {
         interest: formData.get('interest') as string
     };
 
-    await new Promise((resolve) => setTimeout(resolve, 5000));  
     const response = await fetch("http://localhost:3000/api/games/game", {
         method: "PUT",
         headers: {
@@ -87,14 +86,20 @@ export async function UpdateGame(formData: FormData) {
         interest: formData.get('interest') as string
     };
 
-    await fetch("http://localhost:3000/api/games/game", {
+    const response = await fetch("http://localhost:3000/api/games/game", {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({game: game, _id: game._id})
     });
-    return revalidatePath("/games");
+
+    if(response.status == 200) {
+        permanentRedirect(`/games/${game._id}`);
+    }
+    else {
+        return response.statusText;
+    }
 }
 
 export async function DeleteGame(game: LocalGame) {
