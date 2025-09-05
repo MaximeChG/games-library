@@ -41,7 +41,8 @@ export async function AddGame( formData: FormData) {
         image: "",
         playedTimes: 0,
         releaseYear: formData.get('releaseYear') as unknown as number,
-        addedDate: new Date()
+        addedDate: new Date(),
+        interest: formData.get('interest') as string
     };
 
     await new Promise((resolve) => setTimeout(resolve, 5000));  
@@ -82,7 +83,8 @@ export async function UpdateGame(formData: FormData) {
         image: "",
         playedTimes: 0,
         releaseYear: formData.get('releaseYear') as unknown as number,
-        addedDate: new Date()
+        addedDate: new Date(),
+        interest: formData.get('interest') as string
     };
 
     await fetch("http://localhost:3000/api/games/game", {

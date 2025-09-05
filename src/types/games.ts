@@ -9,6 +9,7 @@ export interface IGame extends Document {
     image: string,
     playedTimes: number,
     releaseYear: number,
+    interest: string,
     addedDate: Date    
 };
 
@@ -43,6 +44,10 @@ const gameSchema: Schema = new mongoose.Schema({
     },
     releaseYear: {
         type: Number,
+        required: true
+    },
+    interest: {
+        type: String,
         required: true
     },
     addedDate: {

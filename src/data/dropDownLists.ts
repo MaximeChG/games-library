@@ -12,8 +12,16 @@ export const GameState: { key: string, value: string }[] = [
     { key: 'unknown', value: 'Unknown' }
 ];
 
+export const GameInterest: { key: string, value: string }[] = [
+    { key: 'unknown', value: 'Unknown' },
+    { key: 'notInterested', value: 'Not Interested' },
+    { key: 'interested', value: 'Interested' },
+    { key: 'veryInterested', value: 'Very Interested' },
+    { key: 'mustPlay', value: 'Must Play' }
+];
+
 export const GameConsoles: { key: string, value: string }[] = [
-    { key: 'steam', value: "Steam"},
+    { key: 'steam', value: "Steam" },
     { key: 'epicGames', value: "Epic Games" },
     { key: 'pc', value: "PC" },
 
@@ -32,20 +40,20 @@ export const GameConsoles: { key: string, value: string }[] = [
     { key: 'nds', value: "Nintendo DS" },
     { key: 'n3ds', value: "Nintendo 3DS" },
 
-    {key: 'ps1', value: "Playstation 1"}, 
-    {key: 'psMini', value: "Playstation Mini"}, 
-    {key: 'ps2', value: "Playstation 2"}, 
-    {key: 'ps3', value: "Playstation 3"}, 
-    {key: 'ps4', value: "Playstation 4"}, 
-    {key: 'ps5', value: "Playstation 5"}, 
-    {key: 'psn', value: "Playstation Network"}, 
-    {key: 'psp', value: "Playstion Portable"}, 
-    {key: 'pstv', value: "Playstation TV"}, 
+    { key: 'ps1', value: "Playstation 1" },
+    { key: 'psMini', value: "Playstation Mini" },
+    { key: 'ps2', value: "Playstation 2" },
+    { key: 'ps3', value: "Playstation 3" },
+    { key: 'ps4', value: "Playstation 4" },
+    { key: 'ps5', value: "Playstation 5" },
+    { key: 'psn', value: "Playstation Network" },
+    { key: 'psp', value: "Playstion Portable" },
+    { key: 'pstv', value: "Playstation TV" },
 
-    {key: 'xbox', value: "Xbox"}, 
-    {key: 'xbox360', value: "Xbox 360"}, 
+    { key: 'xbox', value: "Xbox" },
+    { key: 'xbox360', value: "Xbox 360" },
 
-    {key: 'emulator', value: "Emulator"},
+    { key: 'emulator', value: "Emulator" },
 ];
 
 

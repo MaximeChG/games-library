@@ -1,12 +1,11 @@
 "use client";
 import classes from "./gameForm.module.css";
-import { BLANKGAME } from "@/data/mockGames";
-import { LocalGame } from "@/types/common";
+import { blankGame, LocalGame } from "@/types/common";
 import Form from "../common/form/form";
 import Button from "../common/button/button";
 import { useRef } from "react";
 import Input from "../common/input/input";
-import { GameConsoles, GameState } from "@/data/dropDownLists";
+import { GameConsoles, GameInterest, GameState } from "@/data/dropDownLists";
 import CheckGroup from "../common/radiogroup/radiogroup";
 import NumberInput from "../common/input/number";
 import Dropdown from "../common/dropdown/dropdown";
@@ -21,7 +20,7 @@ interface Props {
 }
 
 export default function GameForm({ isEditable, _game }: Props) {
-    const game: LocalGame = _game ? _game! : BLANKGAME;
+    const game: LocalGame = _game ? _game! : blankGame;
     const consoleRef = useRef<HTMLInputElement>(null);
     const consoles = isEditable ? game.consoles : [];
 
@@ -66,6 +65,9 @@ export default function GameForm({ isEditable, _game }: Props) {
         <CheckGroup array={GameConsoles} arrayOfKeys={consoles} legendLabel="Select Consoles Availability" UpdateConsoles={UpdateConsoles} />
         <input type="text" id="consoleString" name="consoleString" ref={consoleRef} defaultValue={consoles.toString()} readOnly hidden />
 
+        <div className={classes.interestContainer}>
+             <Dropdown label="Interest" name="interest" id="interest" list={GameInterest} dropdownValue={game.interest} />
+        </div>
         <div className={classes.progressContainer}>
             <Dropdown label="Progress" name="progress" id="progress" list={GameState} dropdownValue={game.progress} />
             <TextArea label="Progress Description" name="progressDescription" id="progressDescription" textValue={game.progressDescription} isRequired={true} />

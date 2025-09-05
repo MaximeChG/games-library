@@ -8,10 +8,11 @@ export type LocalGame = {
         image: string,
         playedTimes: number,
         releaseYear: number,
+        interest: string,
         addedDate: Date    
 };
 
-const blankGame: LocalGame = {
+export const blankGame: LocalGame = {
     _id: "",
     title: "",
     sortTitle: "",
@@ -21,5 +22,6 @@ const blankGame: LocalGame = {
     image: "",
     playedTimes: 0,
     releaseYear: 1000,
+    interest: "unknown",
     addedDate: new Date("2025-01-01")
 };
