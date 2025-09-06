@@ -47,24 +47,28 @@ h3 {
 }
 
 /* Not started section */
+.notStarted,
 .notStarted {
   border: 1px solid rgb(18, 18, 18);
   color: rgb(31, 31, 31);
 }
 
-.notStarted button {
+.notStarted button,
+.notStarted a {
   border: none;
   color: rgb(18, 18, 18);
   background-color: white;
   font-size: medium;
 }
 
-.notStarted button:hover {
+.notStarted button:hover,
+.notStarted a:hover {
   background-color: rgb(18, 18, 18);
   color: white;
 }
 
-.notStarted button:active {
+.notStarted button:active,
+.notStarted a:active {
   color: rgb(18, 18, 18);
 }
 
@@ -74,19 +78,22 @@ h3 {
   color: rgb(236, 213, 0);
 }
 
-.inProgress button {
+.inProgress button,
+.inProgress a {
   border: none;
   color: rgb(236, 213, 0);
   background-color: white;
   font-size: medium;
 }
 
-.inProgress button:hover {
+.inProgress button:hover,
+.inProgress a:hover {
   background-color: rgb(236, 213, 0);
   color: white;
 }
 
-.inProgress button:active {
+.inProgress button:active,
+.inProgress a:active {
   color: rgb(236, 213, 0);
 }
 
@@ -96,19 +103,22 @@ h3 {
   color: rgb(203, 120, 12);
 }
 
-.firstImpression button {
+.firstImpression button,
+.firstImpression a {
   border: none;
   color: rgb(203, 120, 12);
   background-color: white;
   font-size: medium;
 }
 
-.firstImpression button:hover {
+.firstImpression button:hover,
+.firstImpression a:hover {
   background-color: rgb(203, 120, 12);
   color: white;
 }
 
-.firstImpression button:active {
+.firstImpression button:active,
+.firstImpression a:active {
   color: rgb(203, 120, 12);
 }
 
@@ -118,19 +128,22 @@ h3 {
   color: rgb(152, 213, 10);
 }
 
-.played button {
+.played button,
+.played a {
   border: none;
   color: rgb(152, 213, 10);
   background-color: white;
   font-size: medium;
 }
 
-.played button:hover {
+.played button:hover,
+.played a:hover {
   background-color: rgb(152, 213, 10);
   color: white;
 }
 
-.played button:active {
+.played button:active,
+.played a:active {
   color: rgb(152, 213, 10);
 }
 
@@ -140,19 +153,22 @@ h3 {
   color: rgb(6, 249, 11);
 }
 
-.finished button {
+.finished button,
+.finished a {
   border: none;
   color: rgb(6, 249, 11);
   background-color: white;
   font-size: medium;
 }
 
-.finished button:hover {
+.finished button:hover,
+.finished a:hover {
   background-color: rgb(6, 249, 11);
   color: white;
 }
 
-.finished button:active {
+.finished button:active,
+.finished a:active {
   color: rgb(6, 249, 11);
 }
 
@@ -162,19 +178,22 @@ h3 {
   color: rgb(217, 0, 255);
 }
 
-.completed button {
+.completed button,
+.completed a {
   border: none;
   color: rgb(217, 0, 255);
   background-color: white;
   font-size: medium;
 }
 
-.completed button:hover {
+.completed button:hover,
+.completed a:hover {
   background-color: rgb(217, 0, 255);
   color: white;
 }
 
-.completed button:active {
+.completed button:active,
+.completed a:active {
   color: rgb(217, 0, 255);
 }
 
@@ -184,19 +203,22 @@ h3 {
   color: rgb(216, 15, 126);
 }
 
-.onHold button {
+.onHold button,
+.onHold a {
   border: none;
   color: rgb(216, 15, 126);
   background-color: white;
   font-size: medium;
 }
 
-.onHold button:hover {
+.onHold button:hover,
+.onHold a:hover {
   background-color: rgb(216, 15, 126);
   color: white;
 }
 
-.onHold button:active {
+.onHold button:active,
+.onHold a:active {
   color: rgb(216, 15, 126);
 }
 
@@ -206,19 +228,22 @@ h3 {
   color: rgb(213, 7, 7);
 }
 
-.dropped button {
+.dropped button,
+.dropped a {
   border: none;
   color: rgb(213, 7, 7);
   background-color: white;
   font-size: medium;
 }
 
-.dropped button:hover {
+.dropped button:hover,
+.dropped a:hover {
   background-color: rgb(213, 7, 7);
   color: white;
 }
 
-.dropped button:active {
+.dropped button:active,
+.dropped a:active {
   color: rgb(213, 7, 7);
 }
 
@@ -228,19 +253,22 @@ h3 {
   color: rgb(7, 175, 144);
 }
 
-.cantFinish button {
+.cantFinish button,
+.cantFinish a {
   border: none;
   color: rgb(7, 175, 144);
   background-color: white;
   font-size: medium;
 }
 
-.cantFinish button:hover {
+.cantFinish button:hover,
+.cantFinish a:hover {
   background-color: rgb(7, 175, 144);
   color: white;
 }
 
-.cantFinish button:active {
+.cantFinish button:active,
+.cantFinish a:active {
   color: rgb(203, 120, 12);
 }
 
@@ -250,19 +278,22 @@ h3 {
   color: rgb(67, 9, 174);
 }
 
-.na button {
+.na button,
+.na a {
   border: none;
   color: rgb(67, 9, 174);
   background-color: white;
   font-size: medium;
 }
 
-.na button:hover {
+.na button:hover,
+.na a:hover {
   background-color: rgb(67, 9, 174);
   color:white;
 }
 
-.na button:active {
+.na button:active,
+.na a:active {
   color: rgb(67, 9, 174);
 }
 
@@ -272,18 +303,21 @@ h3 {
   color: rgb(0, 181, 241);
 }
 
-.unknown button {
+.unknown button,
+.unknown a {
   border: none;
   color: rgb(0, 181, 241);
   background-color: white;
   font-size: medium;
 }
 
-.unknown button:hover {
+.unknown button:hover,
+.unknown a:hover {
   background-color: rgb(0, 181, 241);
   color: white;
 }
 
-.unknown button:active {
+.unknown button:active,
+.unknown a:active {
   color: rgb(0, 181, 241);
 }
