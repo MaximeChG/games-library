@@ -6,24 +6,14 @@ import { LocalGame } from "@/types/common";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { GameDetails } from "../../../components/games/gameDetails/gameDetails";
 
 interface Props {
     params: Promise<any>;
     searchParams: Record<string, string> | null | undefined;
 }
 
-interface GameProps {
-    game: LocalGame
-}
 
-export async function GameDetails({game} : GameProps){
-    
-
-    return <main>
-        <h3>{game.title}</h3>
-        <Link href={`/games/${game._id}?modal=true`}><Button text={"Edit Game"} type={"button"} buttonClass={"bordered"} /></Link>
-    </main>
-} 
 
 export default async function GameDetailsPage(props: Props) {
     const params = await props.params;
