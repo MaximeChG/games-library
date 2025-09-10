@@ -21,9 +21,10 @@ export default async function GameDetailsPage(props: Props) {
 
     const game: LocalGame = await FetchGame(params.gameSlug);
 
-    return <main>
+    return <main style={{ textAlign: 'center', marginTop: '1%' }} >
         <Suspense fallback={<h3>Fetching Game...</h3>}>
-            <GameDetails game={game}/>
+            <GameDetails game={game} />
+            <Link href={`/games/${game._id}?modal=true`}><Button text={"Edit Game"} type={"button"} buttonClass={"bordered"} /></Link>
         </Suspense>
 
         {showModal && <Modal>{<GameForm isEditable={true} _game={game}/>}</Modal>}
