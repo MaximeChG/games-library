@@ -2,9 +2,10 @@
 
 import React, { useState, useMemo } from 'react';
 import { LayoutGrid, List, Search, Play, Pause, CheckCircle2, History, XCircle, SlidersHorizontal, ArrowUpRight } from 'lucide-react';
+import type { PlayState } from '../../types/games';
 
 // Define strict types for the Game status mapping
-type PlayState = 'playing' | 'backlog' | 'paused' | 'completed' | 'dropped';
+
 
 interface Game {
   id: string;
@@ -44,7 +45,7 @@ const MOCK_GAMES: Game[] = [
     title: 'Hades II',
     coverUrl: 'https://unsplash.com',
     platform: 'PC / Epic',
-    playState: 'paused',
+    playState: 'finished',
     completionProgress: 25,
     hoursPlayed: 14,
     lastPlayed: '2 weeks ago',
@@ -54,7 +55,7 @@ const MOCK_GAMES: Game[] = [
     title: 'The Witcher 3: Wild Hunt',
     coverUrl: 'https://unsplash.com',
     platform: 'PC / GOG',
-    playState: 'completed',
+    playState: 'dropped',
     completionProgress: 100,
     hoursPlayed: 210,
     lastPlayed: '3 months ago',
@@ -64,7 +65,7 @@ const MOCK_GAMES: Game[] = [
     title: 'Baldur\'s Gate 3',
     coverUrl: 'https://unsplash.com',
     platform: 'PS5',
-    playState: 'backlog',
+    playState: 'na',
     completionProgress: 0,
     hoursPlayed: 0,
     lastPlayed: 'Never',
@@ -78,6 +79,8 @@ const STATE_CONFIG: Record<PlayState, { label: string; bg: string; text: string;
   paused: { label: 'On Hold', bg: 'bg-amber-500/10', text: 'text-amber-400', dot: 'bg-amber-400', icon: <Pause className="w-3.5 h-3.5" /> },
   completed: { label: 'Completed', bg: 'bg-emerald-500/10', text: 'text-emerald-400', dot: 'bg-emerald-400', icon: <CheckCircle2 className="w-3.5 h-3.5" /> },
   dropped: { label: 'Dropped', bg: 'bg-rose-500/10', text: 'text-rose-400', dot: 'bg-rose-400', icon: <XCircle className="w-3.5 h-3.5" /> },
+  finished: { label: 'Finished', bg: 'bg-emerald-500/10', text: 'text-emerald-400', dot: 'bg-emerald-400', icon: <CheckCircle2 className="w-3.5 h-3.5" /> },
+  na: { label: 'N/A', bg: 'bg-zinc-500/10', text: 'text-zinc-400', dot: 'bg-zinc-500', icon: <SlidersHorizontal className="w-3.5 h-3.5" /> },
 };
 
 export default function AllGamesList() {
@@ -117,7 +120,7 @@ export default function AllGamesList() {
 
         {/* Filtering Tabs */}
         <div className="flex flex-wrap items-center gap-1.5 bg-zinc-900/40 p-1.5 border border-zinc-800/80 rounded-xl overflow-x-auto">
-          {(['all', 'playing', 'backlog', 'paused', 'completed'] as const).map((tab) => (
+          {(['all', 'playing', 'backlog', 'paused', 'completed', 'dropped', 'na', 'finished'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
